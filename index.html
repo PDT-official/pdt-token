@@ -31,6 +31,7 @@
             margin: 10px 0;
         }
 
+        /* ⭐ Layout card */
         .section {
             display: flex;
             flex-wrap: wrap;
@@ -41,14 +42,24 @@
             margin: auto;
         }
 
+        /* ⭐ CARD GLASSMORPHISM */
         .card {
-            background: #1a1a1a;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 195, 255, 0.25);
+            border-radius: 14px;
             padding: 25px;
-            border-radius: 12px;
-            border: 1px solid #333;
             width: 320px;
             max-width: 350px;
             text-align: left;
+            box-shadow: 0 0 20px rgba(0, 195, 255, 0.12);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 0 30px rgba(0, 195, 255, 0.35);
         }
 
         .card h2 {
