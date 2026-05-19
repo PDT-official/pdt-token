@@ -3,46 +3,196 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PDT Token – Official</title>
-    <link rel="icon" type="image/png" href="assets/pdt/logo.png">
+    <title>PDT – Project Digital Token</title>
+
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background: #0d0d0d;
+            background: #000;
             color: #fff;
+            font-family: Arial, sans-serif;
             text-align: center;
             padding: 40px;
         }
+
         img {
-            width: 180px;
+            width: 220px;
             margin-top: 20px;
         }
-        .box {
-            margin-top: 30px;
-            padding: 20px;
-            background: #1a1a1a;
-            border-radius: 10px;
-            display: inline-block;
-            text-align: left;
+
+        /* ---------------- GRID LAYOUT ---------------- */
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            max-width: 1100px;
+            margin: 40px auto;
         }
-        code {
-            color: #00eaff;
+
+        /* ---------------- ULTRA 3D BOX ---------------- */
+
+        .box {
+            background: rgba(17, 17, 17, 0.85);
+            padding: 20px;
+            border-radius: 14px;
+            border: 1px solid rgba(240, 192, 64, 0.25);
+            max-width: 500px;
+            margin: auto;
+
+            backdrop-filter: blur(6px);
+            box-shadow: 0 0 18px rgba(240, 192, 64, 0.25);
+
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+
+            transform-style: preserve-3d;
+            position: relative;
+            overflow: hidden;
+
+            z-index: 0;
+        }
+
+        .box * {
+            position: relative;
+            z-index: 3;
+            transition: transform 0.15s ease;
+        }
+
+        .box::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(240,192,64,0.15), transparent 70%);
+            z-index: 1;
+            transition: transform 0.3s ease;
+            pointer-events: none;
+        }
+
+        .box::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 200%;
+            height: 100%;
+            background: linear-gradient(
+                75deg,
+                transparent 0%,
+                rgba(255,255,255,0.15) 50%,
+                transparent 100%
+            );
+            z-index: 2;
+            transform: translateX(-100%);
+            transition: transform 0.4s ease;
+            pointer-events: none;
+        }
+
+        a {
+            color: #f0c040;
+            text-decoration: none;
         }
     </style>
 </head>
+
 <body>
 
-    <h1>PDT Token</h1>
-    <p>Benvenuto nel sito ufficiale del progetto PDT Token.</p>
+    <h1>PDT – Project Digital Token</h1>
 
-    <img src="assets/pdt/logo.png" alt="PDT Logo">
+    <img src="metadata/logo/pdt.png" alt="PDT Logo">
 
-    <div class="box">
-        <h2>Metadata</h2>
-        <p>I metadati del token sono disponibili qui:</p>
-        <p><code>metadata/token.json</code></p>
+    <!-- GRID 2 COLONNE -->
+    <div class="grid">
+
+        <!-- ABOUT -->
+        <div class="box">
+            <h2>About PDT</h2>
+            <p>PDT – Project Digital Token è un asset digitale creato con l’obiettivo di offrire un progetto semplice, trasparente e facilmente verificabile.</p>
+            <p>Il token nasce con una struttura minimale ma solida, con metadata pubblici e un’identità chiara, pensata per evolvere nel tempo senza complessità inutili.</p>
+        </div>
+
+        <!-- CARATTERISTICHE -->
+        <div class="box">
+            <h2>Caratteristiche del Token</h2>
+            <p>✔ Nome: Project Digital Token</p>
+            <p>✔ Simbolo: PDT</p>
+            <p>✔ Identità chiara e verificabile</p>
+            <p>✔ Metadata pubblici e trasparenti</p>
+            <p>✔ Logo ufficiale certificato</p>
+        </div>
+
+        <!-- METADATA -->
+        <div class="box">
+            <h2>Metadata</h2>
+            <p>Il file JSON ufficiale del token è disponibile qui:</p>
+            <p><a href="metadata/token.json">Apri token.json</a></p>
+        </div>
+
+        <!-- VISION -->
+        <div class="box">
+            <h2>Vision</h2>
+            <p>Creare un token digitale semplice, accessibile e trasparente, che possa evolvere nel tempo mantenendo una struttura chiara e verificabile da chiunque.</p>
+        </div>
+
+        <!-- MISSION -->
+        <div class="box">
+            <h2>Mission</h2>
+            <p>Fornire un’identità digitale minimale ma solida, con strumenti chiari e pubblici che permettano a chiunque di comprendere, verificare e utilizzare PDT senza complessità inutili.</p>
+        </div>
+
+        <!-- ROADMAP -->
+        <div class="box">
+            <h2>Roadmap</h2>
+            <p>Q2 2026 – Pubblicazione dei metadata ufficiali</p>
+            <p>Q3 2026 – Lancio del sito ufficiale PDT</p>
+            <p>Q4 2026 – Integrazione futura e sviluppo ecosistema</p>
+        </div>
+
     </div>
+
+    <!-- FOOTER -->
+    <p style="margin-top:40px; opacity:0.6;">
+        © 2026 Project Digital Token — Concept & Development by MLance
+    </p>
+
+    <!-- ---------------- ULTRA 3D SCRIPT ---------------- -->
+
+    <script>
+    document.querySelectorAll('.box').forEach(box => {
+
+        box.addEventListener('mousemove', e => {
+            const rect = box.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+
+            const rotateX = ((y - centerY) / centerY) * 10;
+            const rotateY = ((x - centerX) / centerX) * -10;
+
+            box.style.transform = `translateY(-6px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+            box.style.boxShadow = "0 0 28px rgba(240, 192, 64, 0.9)";
+
+            box.querySelectorAll('*').forEach(el => {
+                const depth = 10;
+                const moveX = (x - centerX) / depth;
+                const moveY = (y - centerY) / depth;
+                el.style.transform = `translate(${moveX}px, ${moveY}px)`;
+            });
+        });
+
+        box.addEventListener('mouseleave', () => {
+            box.style.transform = "translateY(0) rotateX(0) rotateY(0)";
+            box.style.boxShadow = "0 0 18px rgba(240, 192, 64, 0.25)";
+
+            box.querySelectorAll('*').forEach(el => {
+                el.style.transform = "translate(0,0)";
+            });
+        });
+    });
+    </script>
 
 </body>
 </html>
-
