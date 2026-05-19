@@ -15,21 +15,42 @@
             text-align: center;
         }
 
+        /* ⭐ NAVBAR GLASSMORPHISM */
+        .navbar {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 195, 255, 0.25);
+            padding: 10px 0;
+            z-index: 1000;
+        }
+
+        .navbar a {
+            margin: 0 15px;
+            color: #00c3ff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+
         /* ⭐ HEADER ULTRA COMPATTO */
         header {
-            padding: 4px 20px 32px 20px; /* top ridotto, bottom leggermente ridotto */
+            padding: 4px 20px 32px 20px;
         }
 
         img.logo {
             width: 180px;
             height: 180px;
             border-radius: 20px;
-            margin-bottom: 10px; /* avvicina il titolo */
+            margin-bottom: 10px;
         }
 
         h1 {
             font-size: 2.4rem;
-            margin: 6px 0; /* ridotto per compattezza */
+            margin: 6px 0;
         }
 
         /* ⭐ LAYOUT CARD */
@@ -38,7 +59,7 @@
             flex-wrap: wrap;
             justify-content: center;
             gap: 25px;
-            padding: 18px 20px; /* ridotto per avvicinare i riquadri */
+            padding: 18px 20px;
             max-width: 1200px;
             margin: auto;
         }
@@ -80,7 +101,7 @@
         }
 
         .btn-container {
-            margin-top: 15px; /* leggermente ridotto */
+            margin-top: 15px;
         }
 
         .btn {
@@ -101,7 +122,15 @@
 </head>
 <body>
 
-<header>
+<!-- ⭐ NAVBAR -->
+<div class="navbar">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#tokenomics">Tokenomics</a>
+    <a href="#club">Club</a>
+</div>
+
+<header id="home">
     <img src="assets/pdt/logo.png" alt="PDT Logo" class="logo" onerror="this.style.display='none'">
     <h1>PDT Token</h1>
     <p>Project Digital Token by MLance</p>
@@ -115,6 +144,7 @@
 
 <section class="section">
 
+    <!-- ⭐ CARD 1 -->
     <div class="card">
         <h2>Token Information</h2>
         <p><strong>Nome:</strong> PDT Token</p>
@@ -128,7 +158,8 @@
         </p>
     </div>
 
-    <div class="card">
+    <!-- ⭐ CARD 2 -->
+    <div class="card" id="about">
         <h2>About PDT</h2>
         <p>
             PDT nasce con un’idea semplice: creare qualcosa di utile e positivo, senza l’obiettivo di fare profitto personale.
@@ -143,8 +174,9 @@
         </p>
     </div>
 
-    <div class="card">
-        <h2>Adesione al PDT Private Holders Club</h2>
+    <!-- ⭐ CARD 3 -->
+    <div class="card" id="club">
+        <h2>Private Holders Club</h2>
         <p>
             Entrare nel Private Holders Club significa far parte del cuore del progetto.
             Non è un gruppo esclusivo: è un gruppo coinvolto, fatto di persone che credono nell’idea e vogliono partecipare da vicino.
@@ -160,13 +192,27 @@
         </ul>
         <p>
             Io verifico che tu abbia i token e ti apro le porte del gruppo Telegram.
-            Da quel momento sei dentro: aggiornamenti in anteprima, idee condivise, decisioni prese insieme
-            e un ambiente dove la tua opinione conta davvero.
         </p>
 
         <div style="text-align:center; margin-top:15px;">
             <a class="btn" href="https://t.me/INSERISCI_TELEGRAM" target="_blank">Entra nel Club</a>
         </div>
+    </div>
+
+    <!-- ⭐ CARD 4 — TOKENOMICS -->
+    <div class="card" id="tokenomics">
+        <h2>Tokenomics</h2>
+        <p><strong>Supply totale:</strong> 1.000.000 PDT</p>
+        <p><strong>Team allocation:</strong> 0%</p>
+        <p><strong>Community:</strong> 100%</p>
+        <p><strong>Fee:</strong> 0%</p>
+        <p><strong>Burn:</strong> Nessuno</p>
+        <p><strong>Utility:</strong></p>
+        <ul>
+            <li>Accesso al Private Holders Club</li>
+            <li>Governance futura</li>
+            <li>Identità del progetto</li>
+        </ul>
     </div>
 
 </section>
