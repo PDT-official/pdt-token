@@ -3,196 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PDT – Project Digital Token</title>
+    <title>PDT Token – Official Website</title>
 
     <style>
         body {
-            background: #000;
-            color: #fff;
+            margin: 0;
+            padding: 0;
             font-family: Arial, sans-serif;
+            background: #0d0d0d;
+            color: #f2f2f2;
             text-align: center;
-            padding: 40px;
         }
 
-        img {
-            width: 220px;
-            margin-top: 20px;
+        header {
+            padding: 40px 20px;
         }
 
-        /* ---------------- GRID LAYOUT ---------------- */
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
-            max-width: 1100px;
-            margin: 40px auto;
+        img.logo {
+            width: 180px;
+            height: 180px;
+            border-radius: 20px;
+            margin-bottom: 20px;
         }
 
-        /* ---------------- ULTRA 3D BOX ---------------- */
+        h1 {
+            font-size: 2.4rem;
+            margin: 10px 0;
+        }
 
-        .box {
-            background: rgba(17, 17, 17, 0.85);
-            padding: 20px;
-            border-radius: 14px;
-            border: 1px solid rgba(240, 192, 64, 0.25);
-            max-width: 500px;
+        /* ⭐ Layout affiancato */
+        .section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+            padding: 40px 20px;
+            max-width: 1200px;
             margin: auto;
-
-            backdrop-filter: blur(6px);
-            box-shadow: 0 0 18px rgba(240, 192, 64, 0.25);
-
-            transition: transform 0.15s ease, box-shadow 0.15s ease;
-
-            transform-style: preserve-3d;
-            position: relative;
-            overflow: hidden;
-
-            z-index: 0;
         }
 
-        .box * {
-            position: relative;
-            z-index: 3;
-            transition: transform 0.15s ease;
+        .card {
+            background: #1a1a1a;
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid #333;
+            width: 320px;
+            max-width: 350px;
+            text-align: left;
         }
 
-        .box::before {
-            content: "";
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(240,192,64,0.15), transparent 70%);
-            z-index: 1;
-            transition: transform 0.3s ease;
-            pointer-events: none;
-        }
-
-        .box::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 200%;
-            height: 100%;
-            background: linear-gradient(
-                75deg,
-                transparent 0%,
-                rgba(255,255,255,0.15) 50%,
-                transparent 100%
-            );
-            z-index: 2;
-            transform: translateX(-100%);
-            transition: transform 0.4s ease;
-            pointer-events: none;
+        .card h2 {
+            text-align: center;
         }
 
         a {
-            color: #f0c040;
+            color: #00c3ff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer {
+            padding: 20px;
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        /* Pulsanti */
+        .btn-container {
+            margin-top: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 18px;
+            margin: 5px;
+            background: #00c3ff;
+            color: #000;
+            border-radius: 8px;
+            font-weight: bold;
             text-decoration: none;
         }
+
     </style>
 </head>
-
 <body>
 
-    <h1>PDT – Project Digital Token</h1>
+<header>
+    <img src="assets/pdt/logo.png" alt="PDT Logo" class="logo">
+    <h1>PDT Token</h1>
+    <p>Project Digital Token by MLance</p>
 
-    <img src="metadata/logo/pdt.png" alt="PDT Logo">
+    <div class="btn-container">
+        <a class="btn" href="https://bscscan.com/token/0x5d59feb8eebb651971fd16961ac3cfb836c8ba63" target="_blank">BscScan</a>
+        <a class="btn" href="https://github.com/pdt-official/pdt-token" target="_blank">GitHub</a>
+        <a class="btn" href="https://t.me/INSERISCI_TELEGRAM" target="_blank">Telegram</a>
+    </div>
+</header>
 
-    <!-- GRID 2 COLONNE -->
-    <div class="grid">
+<section class="section">
 
-        <!-- ABOUT -->
-        <div class="box">
-            <h2>About PDT</h2>
-            <p>PDT – Project Digital Token è un asset digitale creato con l’obiettivo di offrire un progetto semplice, trasparente e facilmente verificabile.</p>
-            <p>Il token nasce con una struttura minimale ma solida, con metadata pubblici e un’identità chiara, pensata per evolvere nel tempo senza complessità inutili.</p>
-        </div>
-
-        <!-- CARATTERISTICHE -->
-        <div class="box">
-            <h2>Caratteristiche del Token</h2>
-            <p>✔ Nome: Project Digital Token</p>
-            <p>✔ Simbolo: PDT</p>
-            <p>✔ Identità chiara e verificabile</p>
-            <p>✔ Metadata pubblici e trasparenti</p>
-            <p>✔ Logo ufficiale certificato</p>
-        </div>
-
-        <!-- METADATA -->
-        <div class="box">
-            <h2>Metadata</h2>
-            <p>Il file JSON ufficiale del token è disponibile qui:</p>
-            <p><a href="metadata/token.json">Apri token.json</a></p>
-        </div>
-
-        <!-- VISION -->
-        <div class="box">
-            <h2>Vision</h2>
-            <p>Creare un token digitale semplice, accessibile e trasparente, che possa evolvere nel tempo mantenendo una struttura chiara e verificabile da chiunque.</p>
-        </div>
-
-        <!-- MISSION -->
-        <div class="box">
-            <h2>Mission</h2>
-            <p>Fornire un’identità digitale minimale ma solida, con strumenti chiari e pubblici che permettano a chiunque di comprendere, verificare e utilizzare PDT senza complessità inutili.</p>
-        </div>
-
-        <!-- ROADMAP -->
-        <div class="box">
-            <h2>Roadmap</h2>
-            <p>Q2 2026 – Pubblicazione dei metadata ufficiali</p>
-            <p>Q3 2026 – Lancio del sito ufficiale PDT</p>
-            <p>Q4 2026 – Integrazione futura e sviluppo ecosistema</p>
-        </div>
-
+    <div class="card">
+        <h2>Token Information</h2>
+        <p><strong>Nome:</strong> PDT Token</p>
+        <p><strong>Simbolo:</strong> PDT</p>
+        <p><strong>Decimali:</strong> 18</p>
+        <p><strong>Rete:</strong> BNB Smart Chain (BSC)</p>
+        <p><strong>Standard:</strong> ERC‑20</p>
+        <p><strong>Contract Address:</strong></p>
+        <p style="font-size:1.1rem; word-break: break-all;">
+            <strong>0x5d59feb8eebb651971fd16961ac3cfb836c8ba63</strong>
+        </p>
     </div>
 
-    <!-- FOOTER -->
-    <p style="margin-top:40px; opacity:0.6;">
-        © 2026 Project Digital Token — Concept & Development by MLance
-    </p>
+    <div class="card">
+        <h2>About PDT</h2>
+        <p>
+            PDT è un token digitale progettato per applicazioni decentralizzate, automazione
+            e integrazioni future nel mondo Web3.  
+            L’obiettivo è costruire un ecosistema solido, trasparente e orientato alla community.
+        </p>
+    </div>
 
-    <!-- ---------------- ULTRA 3D SCRIPT ---------------- -->
+    <div class="card">
+        <h2>Adesione al PDT Private Holders Club</h2>
+        <p>L’accesso al club privato è riservato agli holder che soddisfano i requisiti minimi:</p>
+        <ul>
+            <li>Possesso di almeno 100 PDT</li>
+            <li>Wallet non-custodial (MetaMask o equivalente)</li>
+            <li>Esperienza base su BSC</li>
+            <li>Verifica del wallet tramite DM</li>
+        </ul>
+    </div>
 
-    <script>
-    document.querySelectorAll('.box').forEach(box => {
+</section>
 
-        box.addEventListener('mousemove', e => {
-            const rect = box.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-
-            const rotateX = ((y - centerY) / centerY) * 10;
-            const rotateY = ((x - centerX) / centerX) * -10;
-
-            box.style.transform = `translateY(-6px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-            box.style.boxShadow = "0 0 28px rgba(240, 192, 64, 0.9)";
-
-            box.querySelectorAll('*').forEach(el => {
-                const depth = 10;
-                const moveX = (x - centerX) / depth;
-                const moveY = (y - centerY) / depth;
-                el.style.transform = `translate(${moveX}px, ${moveY}px)`;
-            });
-        });
-
-        box.addEventListener('mouseleave', () => {
-            box.style.transform = "translateY(0) rotateX(0) rotateY(0)";
-            box.style.boxShadow = "0 0 18px rgba(240, 192, 64, 0.25)";
-
-            box.querySelectorAll('*').forEach(el => {
-                el.style.transform = "translate(0,0)";
-            });
-        });
-    });
-    </script>
+<footer>
+    © 2026 PDT Token – All rights reserved.
+</footer>
 
 </body>
 </html>
